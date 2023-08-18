@@ -13,19 +13,6 @@ let fileNameXlsx = `records_final_${moment().format('YYYY_MM_DD_HH_mm_SS')}.xlsx
 const xlsx = require('xlsx');
 const path = require('path')
 const ext = path.extname('sampleData.exports.xlsx');
-let student_data = [{
-    Student:'Nikhil',
-    Age:22,
-    Branch:'ISE',
-    Marks: 70
-},
-{
-    Student:'Amitha',
-    Age:21,
-    Branch:'EC',
-    Marks:80
-}]
-
 
 async function trimdata_(data){
     try{
@@ -84,7 +71,7 @@ async function checkCalculations(data){
 async function writeFIleNew(data_new){
     // this type we can check from the incoming request , and the same logic is applied for different file types.
     // For now iam handling .csv and .xlsx and iam reading only those two formats.
-    
+
     // let fileType = path.extname(incomingFileName)
     try{
         let vala =  await trimdata_(data_new);
